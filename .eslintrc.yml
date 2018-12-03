@@ -10,3 +10,4 @@ env:
 rules:
   prettier/prettier:
     - error
+  no-console: 0
