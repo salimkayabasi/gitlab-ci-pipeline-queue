@@ -5,5 +5,6 @@ ENV APP /app/
 WORKDIR $APP
 
 ADD ./package*.json $APP
-RUN npm i --production
 ADD ./index.js $APP
+
+RUN npm i --production && npm link
