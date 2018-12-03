@@ -32,6 +32,7 @@ test:
   stage: test
   image: node:alpine
   before_script:
-    - npm i
+    - npm i --production
+    - npm link
   script:
-    npm run start
+    - gitlab-ci-pipeline-queue
