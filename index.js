@@ -6,7 +6,7 @@ const {
   CI_PIPELINE_ID,
   CI_PROJECT_ID,
   CI_PROJECT_URL,
-  INTERVAL,
+  INTERVAL_SEC,
 } = process.env;
 
 if (!GITLAB_API_TOKEN) {
@@ -22,6 +22,8 @@ if (!CI_PROJECT_URL) {
   throw new Error('Env var CI_PROJECT_URL not present');
 }
 
+const intervalSec = Number(INTERVAL_SEC || 5);
+const intervalMs = intervalSec * 1e3;
 const currentPipelineId = parseInt(CI_PIPELINE_ID, 10);
 const fullUrl = url.parse(CI_PROJECT_URL);
 const baseUrl = fullUrl.href.replace(fullUrl.path, '');
@@ -55,9 +57,9 @@ function check() {
       return;
     }
     console.log(
-      "The current pipeline is not the oldest one, let's wait for 5 seconds and retry",
+      `The current pipeline is not the oldest one, let's wait for ${intervalSec} seconds and retry`,
     );
-    setTimeout(check, Number(INTERVAL));
+    setTimeout(check, intervalMs);
   });
 }
 
