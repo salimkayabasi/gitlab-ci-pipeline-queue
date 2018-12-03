@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Hacky solution for ",
   "main": "index.js",
+  "bin": {
+    "gitlab-ci-pipeline-queue": "./index.js"
+  },
   "scripts": {
     "start": "node index.js",
     "lint": "eslint .",
