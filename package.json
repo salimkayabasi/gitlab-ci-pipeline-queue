@@ -1,0 +1,32 @@
+{
+  "name": "gitlab-ci-pipeline-queue",
+  "version": "1.0.0",
+  "description": "Hacky solution for ",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salimkayabasi/gitlab-ci-pipeline-queue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salimkayabasi/gitlab-ci-pipeline-queue/issues"
+  },
+  "homepage": "https://github.com/salimkayabasi/gitlab-ci-pipeline-queue#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-json": "^1.3.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.15.3"
+  }
+}

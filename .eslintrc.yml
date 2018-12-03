@@ -1,0 +1,12 @@
+extends:
+  - airbnb-base
+  - prettier
+plugins:
+  - prettier
+  - json
+env:
+  node: true
+  jest: true
+rules:
+  prettier/prettier:
+    - error
