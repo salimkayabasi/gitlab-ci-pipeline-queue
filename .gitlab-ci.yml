@@ -1,0 +1,40 @@
+stages:
+  - check
+  - test
+
+nsp:
+  stage: check
+  image: node:alpine
+  before_script:
+    - npm config set unsafe-perm true
+  script:
+    - npx nsp check
+
+dependency:
+  stage: check
+  image: node:alpine
+  before_script:
+    - npm config set unsafe-perm true
+    - npm i
+  script:
+    - npx npm-check-updates --error-level 2
+
+lint:
+  stage: check
+  image: node:alpine
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - npm config set unsafe-perm true
+    - npm i
+  script:
+    - npm run lint
+
+test:
+  stage: test
+  image: node:alpine
+  before_script:
+    - npm i
+  script:
+    node index.js
