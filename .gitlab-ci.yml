@@ -34,4 +34,4 @@ test:
   before_script:
     - npm i
   script:
-    node index.js
+    npm run start

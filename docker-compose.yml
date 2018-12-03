@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  gitlab-ci-pipeline-queue:
+    container_name: gitlab-ci-pipeline-queue
+    build: .
+    command: sh -c "while true; do sleep 30; done;"
+    env_file:
+      - .env

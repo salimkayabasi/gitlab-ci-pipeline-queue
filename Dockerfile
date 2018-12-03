@@ -5,8 +5,5 @@ ENV APP /app/
 WORKDIR $APP
 
 ADD ./package*.json $APP
-RUN npm i
-
-ADD . $APP
-
-CMD node index.js
+RUN npm i --production
+ADD ./index.js $APP

@@ -4,6 +4,7 @@
   "description": "Hacky solution for ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
